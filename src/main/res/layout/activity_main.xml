@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/total"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginTop="5sp"
+        android:layout_marginRight="5sp"
+        android:background="#709EF072"
+        android:orientation="vertical"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/MatchBoard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#887FE448"
+            android:backgroundTintMode="multiply"
+            android:fontFamily="sans-serif-smallcaps"
+            android:includeFontPadding="true"
+            android:paddingTop="5sp"
+            android:text="@string/total_matches"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="25sp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/Match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#887FE448"
+            android:backgroundTintMode="src_atop"
+            android:fontFamily="sans-serif-smallcaps"
+            android:includeFontPadding="true"
+            android:paddingBottom="5sp"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="25sp"
+            android:textStyle="bold|italic"
+            tools:text="--" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/Score_Board"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="5sp"
+        android:background="#363199B4"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total">
+
+        <TableRow
+            android:id="@+id/Players"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/P1"
+                android:layout_width="163dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="5sp"
+                android:background="#8341A7EB"
+                android:text="@string/player_1"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/P2"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="10sp"
+                android:layout_marginRight="5sp"
+                android:background="#8341A7EB"
+                android:text="@string/player_2"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold|italic" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/Scores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/P1Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="#8341A7EB"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold|italic"
+                tools:text="--" />
+
+            <TextView
+                android:id="@+id/P2Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_marginRight="5sp"
+                android:layout_marginBottom="10sp"
+                android:background="#8341A7EB"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:textStyle="bold|italic"
+                tools:text="--" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/board"
+        android:layout_width="302dp"
+        android:layout_height="274dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/objects"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Score_Board">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/i0"
+                android:layout_width="61dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="0"
+                app:srcCompat="@drawable/white_back" />
+
+            <ImageView
+                android:id="@+id/i1"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="35dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="1"
+                app:srcCompat="@drawable/white_back" />
+
+            <ImageView
+                android:id="@+id/i2"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="35dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="2"
+                app:srcCompat="@drawable/white_back" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <ImageView
+                android:id="@+id/i3"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="3"
+                app:srcCompat="@drawable/white_back" />
+
+            <ImageView
+                android:id="@+id/i4"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="35dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="4"
+                app:srcCompat="@drawable/white_back" />
+
+            <ImageView
+                android:id="@+id/i5"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="35dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="5"
+                app:srcCompat="@drawable/white_back" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/i6"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="6"
+                app:srcCompat="@drawable/white_back" />
+
+            <ImageView
+                android:id="@+id/i7"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="35dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="7"
+                app:srcCompat="@drawable/white_back" />
+
+            <ImageView
+                android:id="@+id/i8"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginStart="35dp"
+                android:contentDescription="@string/pos"
+                android:onClick="place"
+                android:tag="8"
+                app:srcCompat="@drawable/white_back" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/rematch"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:onClick="restart"
+        android:text="@string/rematch"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.702"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/board"
+        app:layout_constraintVertical_bias="0.087" />
+
+    <Button
+        android:id="@+id/reset"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:onClick="reset"
+        android:text="@string/reset"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/board"
+        app:layout_constraintVertical_bias="0.087" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
